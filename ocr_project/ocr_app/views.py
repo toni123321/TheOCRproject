@@ -1,9 +1,16 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 
+# some imports
+from __future__ import unicode_literals
 from django.shortcuts import render
 
-# Create your views here.
+# ---Main page views---
+
 #home page
 def index(request):
     return render(request, 'home.html')
+
+#about page
+def about(request):
+    return render(request, 'about.html')
+    
