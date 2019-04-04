@@ -13,4 +13,3 @@ def index(request):
 #about page
 def about(request):
     return render(request, 'about.html')
-    
