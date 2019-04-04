@@ -2,31 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Register</title>
 </head>
 <body>
     {% include 'nav.html' %}
-    <div class="container">
-       <div class="columns is-mobile">
-           <div class="column is-half is-offset-one-quarter">
-               <div class="content"><h2>Register</h2></div>
-               <form action="{% url 'register' %}" method="post">
-                   {% csrf_token %}
-                   {% for non_field_error in form.non_field_errors %}
-                       <p class="help is-danger">{{ non_field_error }}</p>
-                   {% endfor %}
-                   {% for field in form %}
-                       <div class="field">
-                           <label for="{{ field.id_for_label }}" class="label">{{ field.html_name }}:</label>
-                           {{ field }}
-                       {% for error in field.errors %}
-                           <p class="help is-danger">{{ error }}</p>
-                       {% endfor %}
-                       </div>
-                   {% endfor %}
-                   <input type="submit" value="SIGN UP" class="button is-primary">
-               </form>
+    <h2>Register</h2>
+    <form action="{% url 'register' %}" method="post">
+       {% csrf_token %}
+       {% for non_field_error in form.non_field_errors %}
+           <p class>{{ non_field_error }}</p>
+       {% endfor %}
+       {% for field in form %}
+           <div>
+               <label for="{{ field.id_for_label }}" class="label">{{ field.html_name }}:</label>
+               {{ field }}
+           {% for error in field.errors %}
+               <p class="help is-danger">{{ error }}</p>
+           {% endfor %}
            </div>
-</div>
+       {% endfor %}
+       <input type="submit" value="SIGN UP">
+    </form>
+
 </body>
 </html>
