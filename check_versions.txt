@@ -1,0 +1,15 @@
+Check the version of python and django
+
+Python 2
+> python --version   
+or
+> python -V
+
+Python 3
+> python3 --version
+or
+> python3 -V
+
+Django 
+> django.admin.py version
+
