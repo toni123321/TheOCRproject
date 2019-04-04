@@ -1,0 +1,7 @@
+Requierements for versions
+
+1 -> python - 2.7 or 3 and above
+
+2 -> django - version 1.11
+
+
