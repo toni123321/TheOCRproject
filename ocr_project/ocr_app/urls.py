@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^login/$', view=UserLoginView.as_view(), name='login'),
     url(r'^logout/$', view=LogoutView.as_view(), name='logout'),
     url(r'^profile/$', view=ProfileView.as_view(), name='profile'),
+    url(r'^upload/$', views.upload, name='upload'),
+    url(r'^list/$', views.list, name='list'),
 ]

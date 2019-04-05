@@ -10,7 +10,9 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, TemplateView
 from ocr_app.forms import UserRegistrationForm, LoginForm
 from django.contrib.auth.views import LoginView
-# ---Main page views---
+from .models import Image
+from .forms import ImageForm
+from . import forms
 
 #----- User registration views ----
 class UserRegistrationView(CreateView):
@@ -49,6 +51,25 @@ class ProfileView(TemplateView):
 
     def dispatch(self, request, *args, **kwargs):
         return super(ProfileView, self).dispatch(request, *args, **kwargs)
+
+#---- Upload views ---
+
+@login_required(login_url="/login/")
+def upload(request):
+    if request.method == 'POST':
+        form = forms.ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.current_user = request.user
+            instance.save()
+            return redirect('list')
+    else:
+        form = forms.ImageForm()
+    return render(request, 'upload_image.html', { 'form': form })
+
+def list(request):
+    images = Image.objects.all().filter(current_user = request.user)
+    return render(request, 'list_images.html', {'images':images})
 
 
 #home page

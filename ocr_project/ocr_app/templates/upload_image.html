@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Upload images</title>
+</head>
+<body>
+  {% include 'nav.html' %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button type="upload">Upload new image</button>
+  </form>
+
+  <!--<button type="submit">Upload</button>-->
+</body>
+
+</html>
