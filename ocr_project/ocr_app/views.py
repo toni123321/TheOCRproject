@@ -4,6 +4,8 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, redirect, HttpResponse
 
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, TemplateView
 from ocr_app.forms import UserRegistrationForm, LoginForm
@@ -39,9 +41,14 @@ class UserLoginView(LoginView):
     template_name = "login.html"
     redirect_authenticated_user = True
     is_registered = True
-    #success_url = redirect('about')
-    success_url = reverse_lazy('dashboard')
+    success_url = reverse_lazy('profile')
 
+@method_decorator(login_required, name='dispatch')
+class ProfileView(TemplateView):
+    template_name = 'profile.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        return super(ProfileView, self).dispatch(request, *args, **kwargs)
 
 
 #home page
