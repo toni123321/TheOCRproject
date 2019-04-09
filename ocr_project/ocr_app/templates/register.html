@@ -3,24 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
+	<link rel="stylesheet" href="/static/css/login.css">
 </head>
 <body>
     {% include 'nav.html' %}
-    <h2>Register</h2>
-    <form action="{% url 'register' %}" method="post">
+    <form class="box" action="{% url 'register' %}" method="post">
        {% csrf_token %}
        {% for non_field_error in form.non_field_errors %}
            <p class>{{ non_field_error }}</p>
        {% endfor %}
-       {% for field in form %}
-           <div>
-               <label for="{{ field.id_for_label }}" class="label">{{ field.html_name }}:</label>
-               {{ field }}
-           {% for error in field.errors %}
-               <p class="help is-danger">{{ error }}</p>
-           {% endfor %}
-           </div>
-       {% endfor %}
+	   <h2>Register</h2>
+	   <input id="id_username" name="username" placeholder="Username" type="text" class="form-control">
+       <input id="id_email" name="email" placeholder="Email" type="email" class="form-control">
+	   <input id="id_password" name="password" placeholder="Password" type="text" class="form-control">
+       <input id="confirm_password" name="password" placeholder="Confirm Password" type="password" class="form-control">
        <input type="submit" value="SIGN UP">
     </form>
 

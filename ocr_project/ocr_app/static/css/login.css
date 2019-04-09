@@ -14,12 +14,12 @@ body{
   background: #212121;
   text-align: center;
 }
-.box h1{
+.box h1, h2{
   color: white;
   text-transform: uppercase;
   font-weight: 500;
 }
-.box input[type = "text"],.box input[type = "password"]{
+.box input[type = "text"],.box input[type = "password"],.box input[type = "email"]{
   border:0;
   background: none;
   display: block;
@@ -33,7 +33,7 @@ body{
   border-radius: 24px;
   transition: 0.25s;
 }
-.box input[type = "text"]:focus,.box input[type = "password"]:focus{
+.box input[type = "text"]:focus,.box input[type = "password"]:focus,.box input[type = "email"]:focus{
   width: 280px;
   border-color: #2ecc71;
 }
