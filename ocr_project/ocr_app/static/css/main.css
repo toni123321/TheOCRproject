@@ -1,1 +1,15 @@
-/* the base file for our css styling */
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #272725;
+}
+p{
+  color: #2ecc71;
+}
+h2{
+  color: #2ecc71;
+}
+h1{
+  color: #2ecc71;
+}
