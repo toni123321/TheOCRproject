@@ -1,7 +1,18 @@
-<h1>Django Image Uploading</h1>
-<ul>
-  {% for image in images %}
-    <h2>{{ image.name }}</h2>
-    <img src="{{ image.cover.url}}" alt="{{ image.name }}">
-  {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Profile page</title>
+</head>
+<body>
+  {% include 'nav.html' %}
+  <h1>Look at your images</h1>
+  <ul>
+    {% for image in images %}
+      <h2>{{ image.name }}</h2>
+      <img width="200" height="200" src="{{ image.cover.url}}" alt="{{ image.name }}">
+    {% endfor %}
+
+  </ul>
+</body>
+</html>
