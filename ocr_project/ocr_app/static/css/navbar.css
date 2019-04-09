@@ -25,12 +25,13 @@
   height: 0;
 }
 #menu {
+
   width: auto;
   border-bottom: 3px solid  #2ecc71;
   font-family: Raleway, sans-serif;
   line-height: 1;
   width:900px;
-  margin-left:100px;
+  margin-left:250px;
 }
 #menu ul {
   background: transparent;
