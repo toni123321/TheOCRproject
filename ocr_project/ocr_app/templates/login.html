@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+	<link rel="stylesheet" href="../static/css/login.css">
 </head>
 <body>
     {% include 'nav.html' %}
@@ -14,7 +15,9 @@
         {% endfor %}
         {% for field in form %}
             <div>
-                <label for="{{ field.id_for_label }}" class="label">{{ field.html_name }}</label>
+                <input type="text" name="" placeholder="Username">
+				<input type="password" name="" placeholder="Password">
+
                 {{ field }}
             {% for error in field.errors %}
                 <p class="help is-danger">{{ error }}</p>
