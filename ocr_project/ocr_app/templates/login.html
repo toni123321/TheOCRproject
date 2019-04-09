@@ -7,16 +7,14 @@
 </head>
 <body>
     {% include 'nav.html' %}
-    <h3 class="title">Login</h3>
-    <form action="{% url 'login' %}" method="post">
+    <form class="box" action="{% url 'login' %}" method="post">
         {% csrf_token %}
         {% for non_field_error in form.non_field_errors %}
             <p class="help is-danger">{{ non_field_error }}</p>
         {% endfor %}
-        <label for="id_username">Username</label>
-        <input id="id_username" name="username" type="text" class="form-control">
-        <label for="id_password">Password</label>
-        <input id="id_password" name="password" type="password" class="form-control">
+        <h1>Login</h1>
+        <input id="id_username" name="username" placeholder="Username" type="text" class="form-control">
+        <input id="id_password" name="password" placeholder="Password" type="password" class="form-control">
 
         <input type="submit" value="SIGN IN">
     </form>
