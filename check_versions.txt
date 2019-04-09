@@ -11,5 +11,5 @@ or
 > python3 -V
 
 Django 
-> django.admin.py version
+> django-admin.py version
 
