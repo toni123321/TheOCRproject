@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-	<link rel="stylesheet" href="../static/css/login.css">
+	<link rel="stylesheet" href="/static/css/login.css">
 </head>
 <body>
     {% include 'nav.html' %}
@@ -13,17 +13,11 @@
         {% for non_field_error in form.non_field_errors %}
             <p class="help is-danger">{{ non_field_error }}</p>
         {% endfor %}
-        {% for field in form %}
-            <div>
-                <input type="text" name="" placeholder="Username">
-				<input type="password" name="" placeholder="Password">
+        <label for="id_username">Username</label>
+        <input id="id_username" name="username" type="text" class="form-control">
+        <label for="id_password">Password</label>
+        <input id="id_password" name="password" type="password" class="form-control">
 
-                {{ field }}
-            {% for error in field.errors %}
-                <p class="help is-danger">{{ error }}</p>
-            {% endfor %}
-            </div>
-        {% endfor %}
         <input type="submit" value="SIGN IN">
     </form>
 
