@@ -33,7 +33,7 @@
   margin-left:100px;
 }
 #menu ul {
-  background: #ffffff;
+  background: transparent;
 }
 #menu > ul > li {
   float: left;
