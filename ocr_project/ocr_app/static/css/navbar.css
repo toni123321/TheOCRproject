@@ -26,7 +26,7 @@
 }
 #menu {
   width: auto;
-  border-bottom: 3px solid #47c9af;
+  border-bottom: 3px solid  #2ecc71;
   font-family: Raleway, sans-serif;
   line-height: 1;
   width:900px;
@@ -59,7 +59,7 @@
   font-size: 15px;
   font-weight: 400;
   text-decoration: none;
-  color: #444444;
+  color: #2ecc71;
   -webkit-transition: all .2s ease;
   -moz-transition: all .2s ease;
   -ms-transition: all .2s ease;
@@ -96,5 +96,5 @@
 #menu > ul > li.active > a:after,
 #menu > ul > li:hover > a:after,
 #menu > ul > li > a:hover:after {
-  background: #47c9af;
+  background: #2ecc71;
 }
