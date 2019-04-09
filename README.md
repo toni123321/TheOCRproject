@@ -5,6 +5,7 @@ The site for taking a text from uploaded images by authenticated users
 
 2 - TODO list:
 -> design of navbar (see navbar.html)
--> make a folder for css and js files (I'll make it today)
+
+
 
 
