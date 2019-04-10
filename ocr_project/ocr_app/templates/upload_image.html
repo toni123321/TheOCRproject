@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Upload images</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/upload_image.css">
 </head>
 <body>
   {% include 'nav.html' %}
-  <form method="post" enctype="multipart/form-data">
+  <input  id="file" type="file" name="myFile">
+  <form id="form" method="post" enctype="multipart/form-data" class="box" action="{% url 'login' %}">
     {% csrf_token %}
-    {{ form }}
-    <button type="upload">Upload new image</button>
+    <input name="fullname" placeholder="Name" type="text" class="form-control">
+    <input type="submit">
   </form>
-
-  <!--<button type="submit">Upload</button>-->
 </body>
 
 </html>

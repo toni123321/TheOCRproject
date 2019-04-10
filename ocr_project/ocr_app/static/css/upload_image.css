@@ -1,0 +1,9 @@
+@import url(/static/css/login.css);
+#file {
+  font-size: 18px;
+  margin-left: 610px;
+  padding-top: 170px;
+}
+#form {
+  background: #272725;
+}
