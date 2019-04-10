@@ -1,0 +1,17 @@
+#profile {
+    margin-top: 60px;
+    margin-left:300px;
+}
+
+.button {
+  background-color: #2ecc71;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
