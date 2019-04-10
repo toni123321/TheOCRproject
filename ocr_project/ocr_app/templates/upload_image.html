@@ -2,19 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8">
-	<link rel="stylesheet" href="/static/css/main.css">
-	<link rel="stylesheet" href="/static/css/list-image.css">
     <title>Upload images</title>
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="/static/css/upload_image.css">
 </head>
 <body>
   {% include 'nav.html' %}
-  <input  id="file" type="file" name="myFile">
-  <form id="form" method="post" enctype="multipart/form-data" class="box" action="{% url 'login' %}">
+
+  <form method="post" enctype="multipart/form-data" class="box" id="form">
     {% csrf_token %}
-    <input name="fullname" placeholder="Name" type="text" class="form-control">
-    <input type="submit">
+    <input type="file" name="{{form.cover.name}}" id="{{form.cover.id_for_label}}">
+    <input type="text" name="{{form.name.name}}" id="{{form.name.id_for_label}}" placeholder="Name">
+    <input type="submit" value="upload">
   </form>
 </body>
 

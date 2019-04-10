@@ -1,9 +1,16 @@
 @import url(/static/css/login.css);
-#file {
+#id_cover {
   font-size: 18px;
-  margin-left: 610px;
-  padding-top: 170px;
+  margin-left: 30px;
+  padding-top: 80px;
 }
 #form {
   background: #272725;
+  border: solid brown;
+  border-radius: 80px;
+  border-width:thick;
+  border-width: 6px;
+  height: 300px;
+
+
 }
