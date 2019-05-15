@@ -13,12 +13,14 @@
   <ul>
     {% for image in images %}
       <div class="gallery">
-        <a target="_blank" href="#">
+        <a href="/current_image">
         <img src="{{ image.cover.url}}" alt="{{ image.name }}" width="600" height="400">
         </a>
         <div class="desc"><h2>{{ image.name }}</h2></div>
+        <p>{{ image.text }}</p>
       </div>
     {% endfor %}
+
 
   </ul>
 </body>

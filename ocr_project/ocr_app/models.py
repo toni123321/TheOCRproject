@@ -4,7 +4,10 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
 #--- model for image ---
-class Image(models.Model):
+
+
+
+class Image_m(models.Model):
     name = models.CharField(max_length=100)
     cover = models.ImageField(upload_to='images/')
     current_user = models.ForeignKey(User,default=None)

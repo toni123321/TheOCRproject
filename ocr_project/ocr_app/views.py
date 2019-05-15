@@ -10,10 +10,16 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, TemplateView
 from ocr_app.forms import UserRegistrationForm, LoginForm
 from django.contrib.auth.views import LoginView
-from .models import Image
+from .models import Image_m
 from .forms import ImageForm
 from . import forms
 
+from PIL import Image
+from pytesseract import image_to_string
+import os
+import tempfile
+import subprocess
+import pyttsx
 #----- User registration views ----
 class UserRegistrationView(CreateView):
     is_registered = False
@@ -61,16 +67,33 @@ def upload(request):
         if form.is_valid():
             instance = form.save(commit=False)
             instance.current_user = request.user
+            #image = Image_m.objects.get(instance.id)
+            #instance.text = ocr(image.cover)
             instance.save()
             return redirect('list')
+            #return render(request, 'current_image.html', {'image':image})
     else:
         form = forms.ImageForm()
     return render(request, 'upload_image.html', { 'form': form })
 
+
 def list(request):
-    images = Image.objects.all().filter(current_user = request.user)
+    images = Image_m.objects.all().filter(current_user = request.user)
     return render(request, 'list_images.html', {'images':images})
 
+
+def ocr(path):
+    image = Image.open(path, mode='r')
+    return image_to_string(image)
+
+def current_image(request):
+    image = Image_m.objects.get(id=33)
+    #text = ocr("../media/image/test.png")
+    engine = pyttsx.init()
+    text = str(ocr(image.cover)).replace("\n", " ")
+    #output = engine.say(text)
+    #output2 = engine.runAndWait()
+    return render(request, 'current_image.html', {'text':text})
 
 #home page
 def index(request):

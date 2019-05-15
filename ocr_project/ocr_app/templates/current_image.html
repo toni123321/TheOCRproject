@@ -1,0 +1,10 @@
+<p>{{text}}</p>
+<button onclick="myFunction()">Click me</button>
+<script>
+function myFunction() {
+  var str = "{{text}}";
+  console.log(str);
+  var msg = new SpeechSynthesisUtterance(str);
+  window.speechSynthesis.speak(msg);
+}
+</script>
