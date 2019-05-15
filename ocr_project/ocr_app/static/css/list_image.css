@@ -15,5 +15,11 @@ div.gallery img {
 
 div.desc {
   padding: 15px;
-  text-align: center;
+  text-align:center;
+	width: 200px;
+	height: 100px;
+}
+
+#current_image {
+	width: auto;
 }
