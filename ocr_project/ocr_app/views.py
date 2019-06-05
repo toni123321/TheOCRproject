@@ -86,8 +86,8 @@ def ocr(path):
     image = Image.open(path, mode='r')
     return image_to_string(image)
 
-def current_image(request):
-    image = Image_m.objects.get(id=35)
+def current_image(request, id):
+    image = Image_m.objects.get(id=id)
     #text = ocr("../media/image/test.png")
     engine = pyttsx.init()
     text = str(ocr(image.cover)).replace("\n", " ")

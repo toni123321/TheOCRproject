@@ -13,5 +13,5 @@ urlpatterns = [
     url(r'^profile/$', view=ProfileView.as_view(), name='profile'),
     url(r'^upload/$', views.upload, name='upload'),
     url(r'^list/$', views.list, name='list'),
-    url(r'^current_image/$', views.current_image, name='current_image'),
+    url(r'^current_image/(?P<id>[0-9]+)/$', views.current_image, name='current_image'),
 ]
