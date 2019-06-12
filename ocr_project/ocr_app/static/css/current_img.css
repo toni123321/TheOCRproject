@@ -55,7 +55,7 @@
   box-shadow: 0 9px #999;
 }
 
-.button_delete:hover {background-color: #29b765}
+.button_delete:hover {background-color: #800000}
 
 .button_delete:active {
   background-color: darkred;
