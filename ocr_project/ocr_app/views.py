@@ -93,7 +93,7 @@ def current_image(request, id):
     text = str(ocr(image.cover)).replace("\n", " ")
     #output = engine.say(text)
     #output2 = engine.runAndWait()
-    return render(request, 'current_image.html', {'text':text, 'image': image.cover })
+    return render(request, 'current_image.html', {'text':text, 'image': image.cover, 'id': id })
 
 #home page
 def index(request):
@@ -102,3 +102,7 @@ def index(request):
 #about page
 def about(request):
     return render(request, 'about.html')
+def delete(request, id):
+    image = Image_m.objects.get(id=id)
+    image.delete()
+    return redirect('/list')

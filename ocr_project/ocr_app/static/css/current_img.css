@@ -40,6 +40,32 @@
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+.button_delete {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #272725;
+  background-color: red;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button_delete:hover {background-color: #29b765}
+
+.button_delete:active {
+  background-color: darkred;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+a{
+  text-decoration: none;
+  color: #272725;
+}
 .textarea{
   margin-top: 125px;
   border: 1px solid #2ecc71;
@@ -55,7 +81,7 @@
   margin-top: 50px;
   margin-left: 50px;
   border-radius: 25px;
-  border: 2px solid #73AD21;
+  border: 2px solid #2ecc71;
   width: 500px;
   height: 300px;
 }
