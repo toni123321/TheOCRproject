@@ -19,7 +19,7 @@ from pytesseract import image_to_string
 import os
 import tempfile
 import subprocess
-import pyttsx
+import pyttsx3
 #----- User registration views ----
 class UserRegistrationView(CreateView):
     is_registered = False
@@ -89,11 +89,11 @@ def ocr(path):
 def current_image(request, id):
     image = Image_m.objects.get(id=id)
     #text = ocr("../media/image/test.png")
-    engine = pyttsx.init()
+    engine = pyttsx3.init()
     text = str(ocr(image.cover)).replace("\n", " ")
     #output = engine.say(text)
     #output2 = engine.runAndWait()
-    return render(request, 'current_image.html', {'text':text})
+    return render(request, 'current_image.html', {'text':text, 'image': image.cover })
 
 #home page
 def index(request):

@@ -1,10 +1,31 @@
-<p>{{text}}</p>
-<button onclick="myFunction()">Click me</button>
-<script>
-function myFunction() {
-  var str = "{{text}}";
-  console.log(str);
-  var msg = new SpeechSynthesisUtterance(str);
-  window.speechSynthesis.speak(msg);
-}
-</script>
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Image</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/navbar.css">
+  <link rel="stylesheet" href="/static/css/current_img.css">
+</head>
+
+<body>
+  {% include 'nav.html' %}
+<div class="row">
+  <div class="column">
+    <img src="../../media/{{ image }}", alt="Not found">
+  </div>
+  <div class="column">
+      <textarea name="text" rows="8" cols="80">{{text}}</textarea>
+      <div>
+        <button class="button" onclick="myFunction()">Play</button>
+        <script>
+        function myFunction() {
+          var str = "{{text}}";
+          console.log(str);
+          var msg = new SpeechSynthesisUtterance(str);
+          window.speechSynthesis.speak(msg);
+        }
+        </script>
+      </div>
+  </div>
+</div>
+</body>
