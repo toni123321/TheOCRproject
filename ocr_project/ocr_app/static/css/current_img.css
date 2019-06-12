@@ -78,10 +78,15 @@ a{
 
 }
 .img{
-  margin-top: 50px;
-  margin-left: 50px;
+  margin-top: 20px;
+  margin-left: 15%;
   border-radius: 25px;
   border: 2px solid #2ecc71;
   width: 500px;
   height: 300px;
+}
+
+#name{
+  margin-top: 40px;
+  text-align: center;
 }

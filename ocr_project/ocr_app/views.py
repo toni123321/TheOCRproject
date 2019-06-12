@@ -93,7 +93,7 @@ def current_image(request, id):
     text = str(ocr(image.cover)).replace("\n", " ")
     #output = engine.say(text)
     #output2 = engine.runAndWait()
-    return render(request, 'current_image.html', {'text':text, 'image': image.cover, 'id': id })
+    return render(request, 'current_image.html', {'text':text, 'image': image.cover, 'id': id ,'name': image.name})
 
 #home page
 def index(request):

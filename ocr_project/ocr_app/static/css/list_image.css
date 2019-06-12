@@ -3,7 +3,7 @@
   display: flex;
 }
 
-/* Create three equal columns that sits next to each other */
+
 .column {
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -17,7 +17,7 @@
     flex-direction: column;
   }
 }
-div.column:hover {
+div.column img:hover {
   border: 1px solid #777;
 }
 
@@ -39,4 +39,7 @@ div.desc {
 
 #current_image {
 	width: auto;
+}
+h1{
+	margin-left: 5%;
 }
